@@ -1,0 +1,56 @@
+# ==============================================================================
+# Azlaan Tools (https://arslanmalik.tech) Robots.txt
+# Optimized for Google, Bing, Yahoo, Yandex, DuckDuckGo & Social Media Crawlers
+# Last Updated: 2026-10-02
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /vendor/
+Allow: /tools/
+Allow: /category/
+Allow: /government-schemes
+
+# Sensitive & internal path protection
+Disallow: /.env
+Disallow: /.git
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /artisan
+Disallow: /storage/
+Disallow: /bootstrap/
+Disallow: /config/
+
+# Search Engine Specific Rules
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemap Index & Canonical Host
+Sitemap: https://arslanmalik.tech/sitemap.xml
+Host: https://arslanmalik.tech

@@ -1,0 +1,2679 @@
+/* ============================================================
+   Azlaan Tools — design system
+   Warm paper background, deep green brand, editorial serif
+   headlines. Hand-built look: no gradients, no emoji icons.
+   ============================================================ */
+:root{
+    --ink:#1e1725;
+    --ink-soft:#4c4355;
+    --muted:#756d7f;
+    --paper:#faf7f1;
+    --card:#ffffff;
+    --line:#e6e0d2;
+    --line-soft:#eee8da;
+    --green-950:#1d082b;
+    --green-900:#2a0b3d;
+    --green-700:#420e6b;
+    --green-600:#511280;
+    --green-050:#efedf5;
+    --amber:#e9a13b;
+    --amber-soft:#fdf3e0;
+    --radius:12px;
+    --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --font-display:'Fraunces',Georgia,'Times New Roman',serif;
+}
+*{-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+}
+::selection{background:var(--green-700);color:#fff}
+a{color:var(--green-700)}
+a:hover{color:var(--green-900)}
+
+/* ---------- Top strip ---------- */
+.topbar{
+    background:var(--green-950);
+    color:#d6cfe3;
+    font-size:.82rem;
+}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.38rem;padding-bottom:.38rem}
+.topbar a{color:#fff;text-decoration:none;font-weight:600}
+.topbar a:hover{text-decoration:underline}
+.topbar .topbar-msg{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:575px){.topbar .topbar-msg{display:none}}
+
+/* ---------- Header ---------- */
+.site-header{
+    background:#fffdf9;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(30,23,37,.02);
+}
+.site-header .navbar{padding-top:.7rem;padding-bottom:.7rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand-mark{
+    width:38px;height:38px;border-radius:9px;flex:0 0 38px;
+    background:var(--green-900);
+    display:inline-flex;align-items:center;justify-content:center;
+}
+.brand-mark svg{width:20px;height:20px}
+.brand-name{font-family:var(--font-display);font-weight:700;font-size:1.32rem;color:var(--ink);letter-spacing:-.01em;line-height:1}
+.brand-name em{font-style:normal;color:var(--green-700)}
+.brand-tag{display:block;font-family:var(--font-body);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.18rem}
+.site-header .nav-link{
+    color:var(--ink-soft);font-weight:550;font-size:.94rem;
+    padding:.45rem .68rem!important;border-radius:8px;
+}
+.site-header .nav-link:hover{color:var(--green-900);background:var(--green-050)}
+.btn-whatsapp{
+    background:#491faa;color:#fff!important;font-weight:600;font-size:.9rem;
+    border-radius:9px;padding:.5rem .95rem!important;display:inline-flex;align-items:center;gap:.45rem;
+}
+.btn-whatsapp:hover{background:#3a178a;color:#fff!important}
+.btn-whatsapp svg{width:16px;height:16px}
+.navbar-toggler{border-color:var(--line)}
+
+main{padding-top:2rem;padding-bottom:1rem}
+
+/* ---------- Hero ---------- */
+.hero{
+    background:#fffdf9;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:3rem 3rem 2.4rem;
+    margin-bottom:2.6rem;
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(var(--line) 1.1px,transparent 1.1px);
+    background-size:22px 22px;
+    opacity:.5;pointer-events:none;
+    -webkit-mask-image:linear-gradient(105deg,transparent 55%,#000 100%);
+    mask-image:linear-gradient(105deg,transparent 55%,#000 100%);
+}
+.hero-inner{position:relative;max-width:720px}
+.hero-eyebrow{
+    font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--green-700);margin-bottom:1rem;
+    display:flex;align-items:center;gap:.6rem;
+}
+.hero-eyebrow::before{content:"";width:26px;height:2px;background:var(--amber);display:inline-block}
+.hero h1{
+    font-family:var(--font-display);
+    font-size:clamp(2.1rem,4.6vw,3.3rem);
+    font-weight:700;line-height:1.12;letter-spacing:-.015em;
+    margin-bottom:1.1rem;color:var(--ink);
+}
+.hero h1 em{font-style:italic;color:var(--green-700)}
+.hero-sub{font-size:1.08rem;color:var(--ink-soft);max-width:600px;margin-bottom:1.7rem}
+.hero-search{max-width:580px;position:relative;margin-bottom:1.5rem}
+.hero-search svg{
+    position:absolute;left:1.05rem;top:50%;transform:translateY(-50%);
+    width:20px;height:20px;color:var(--muted);pointer-events:none;
+}
+.hero-search .form-control{
+    border:1.5px solid var(--line);border-radius:12px;
+    padding:.95rem 1.1rem .95rem 2.9rem;font-size:1.02rem;background:#fff;
+    box-shadow:0 8px 24px rgba(42,11,61,.07);
+}
+.hero-search .form-control:focus{border-color:var(--green-700);box-shadow:0 8px 24px rgba(42,11,61,.10),0 0 0 4px rgba(66,14,107,.12)}
+.hero-meta{display:flex;gap:2.4rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.hero-meta div{display:flex;flex-direction:column}
+.hero-meta strong{font-family:var(--font-display);font-size:1.45rem;font-weight:700;color:var(--green-900);line-height:1.1}
+.hero-meta span{font-size:.8rem;color:var(--muted);font-weight:550;letter-spacing:.02em}
+.hero-popular{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:.88rem;color:var(--muted)}
+.hero-popular a{
+    background:#fff;border:1px solid var(--line);color:var(--ink-soft);
+    border-radius:999px;padding:.32rem .8rem;text-decoration:none;font-weight:550;
+}
+.hero-popular a:hover{border-color:var(--green-700);color:var(--green-900);background:var(--green-050)}
+@media (max-width:767px){.hero{padding:2rem 1.3rem 1.8rem}.hero-meta{gap:1.4rem}}
+
+/* ---------- Category headings ---------- */
+.category-title{
+    font-family:var(--font-display);
+    font-size:1.55rem;font-weight:700;letter-spacing:-.01em;color:var(--ink);
+    margin-top:2.9rem;margin-bottom:.4rem;
+    padding-bottom:.65rem;
+    border-bottom:2px solid var(--ink);
+    display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;
+    scroll-margin-top:110px;
+}
+.category-title .cat-count{
+    font-family:var(--font-body);font-size:.76rem;font-weight:650;
+    color:var(--green-700);background:var(--green-050);
+    border:1px solid #dbd5e6;border-radius:999px;padding:.14rem .6rem;
+    letter-spacing:.03em;
+}
+.cat-sub{color:var(--muted);font-size:.95rem;margin-bottom:.4rem;max-width:760px}
+
+/* ---------- Tool cards ---------- */
+.tool-grid{margin-top:1rem!important}
+.tool-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    height:100%;
+    transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+.tool-card:hover{
+    border-color:#c0b9ce;
+    box-shadow:0 10px 26px rgba(42,11,61,.09);
+    transform:translateY(-3px);
+}
+.tool-card a{text-decoration:none;color:inherit;display:block;height:100%}
+.tool-card .icon{
+    width:44px;height:44px;border-radius:10px;
+    background:var(--green-050);color:var(--green-700);
+    display:flex;align-items:center;justify-content:center;
+}
+.tool-card .icon svg{width:23px;height:23px}
+.tool-card h3{font-size:.99rem;font-weight:650;color:var(--ink);margin-top:.75rem;margin-bottom:.3rem;letter-spacing:-.005em}
+.tool-card p{font-size:.85rem;line-height:1.5;color:var(--muted)}
+.tool-card .badge{font-size:.62rem;vertical-align:middle}
+/* per-category icon tints (grid directly follows its heading) */
+.category-title#bills + .tool-grid .icon{background:#fdf0e2;color:#b96a12}
+.category-title#solar + .tool-grid .icon{background:#fdf3e0;color:#c07f10}
+.category-title#pdf + .tool-grid .icon{background:#fdecec;color:#b3382e}
+.category-title#image + .tool-grid .icon{background:#e9f0fd;color:#2f5aa8}
+.category-title#photo + .tool-grid .icon{background:#f3eafd;color:#6d3bbf}
+.category-title#media + .tool-grid .icon{background:#fdeaf3;color:#b02a63}
+.category-title#finance + .tool-grid .icon{background:#eee8f6;color:#3d1772}
+.category-title#health + .tool-grid .icon{background:#fdeef0;color:#c23b4e}
+.category-title#electrical + .tool-grid .icon{background:#e4eff0;color:#77800f}
+.category-title#developer + .tool-grid .icon{background:#e9eef2;color:#3c556e}
+.category-title#business + .tool-grid .icon{background:#f0ece4;color:#7a5c2e}
+
+/* ---------- About strip (homepage) ---------- */
+.about-strip{
+    margin-top:3.4rem;background:var(--green-900);color:#ebe7f1;
+    border-radius:18px;padding:2.4rem 2.6rem;
+    display:grid;grid-template-columns:1.5fr 1fr;gap:2.2rem;
+}
+.about-strip h2{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:.7rem}
+.about-strip p{color:#d0c8dd;font-size:.97rem;margin-bottom:0}
+.about-strip .about-facts{display:flex;flex-direction:column;gap:.9rem;justify-content:center}
+.about-strip .about-facts div{border-left:3px solid var(--amber);padding-left:.9rem}
+.about-strip .about-facts strong{display:block;color:#fff;font-size:1rem}
+.about-strip .about-facts span{color:#b4a9c6;font-size:.86rem}
+@media (max-width:767px){.about-strip{grid-template-columns:1fr;padding:1.8rem 1.4rem}}
+
+/* ---------- Buttons & forms (brand overrides for all tool pages) ---------- */
+.btn-primary,.btn-az{background:var(--green-700);border-color:var(--green-700);color:#fff;font-weight:600;border-radius:10px}
+.btn-primary:hover,.btn-az:hover{background:var(--green-900);border-color:var(--green-900);color:#fff}
+.btn-success{background:var(--green-600);border-color:var(--green-600);font-weight:600;border-radius:10px}
+.btn-success:hover{background:var(--green-700);border-color:var(--green-700)}
+.btn-outline-success{color:var(--green-700);border-color:var(--green-700);font-weight:600;border-radius:10px}
+.btn-outline-success:hover{background:var(--green-700);border-color:var(--green-700)}
+.btn{border-radius:10px}
+.form-control,.form-select{border-radius:10px;border-color:#d9d2c0}
+.form-control:focus,.form-select:focus{border-color:var(--green-700);box-shadow:0 0 0 4px rgba(66,14,107,.12)}
+.card{border:1px solid var(--line);border-radius:var(--radius)}
+.card-header{border-top-left-radius:var(--radius)!important;border-top-right-radius:var(--radius)!important}
+.card-header.bg-primary{background:var(--green-900)!important}
+.border-success{border-color:#c8bcd8!important}
+.badge.bg-success{background:var(--green-700)!important}
+.alert{border-radius:var(--radius);border-width:1px}
+.alert-info{background:#eeeef4;border-color:#d4d3e2;color:#382c4a}
+.alert-warning{background:var(--amber-soft);border-color:#f0dcb2;color:#6d5212}
+.alert-success{background:var(--green-050);border-color:#d6cfe4;color:var(--green-900)}
+
+/* ---------- Tool pages ---------- */
+.tool-wrap h1{
+    font-family:var(--font-display);font-weight:700;letter-spacing:-.015em;
+    font-size:clamp(1.7rem,3.4vw,2.3rem);color:var(--ink);
+}
+.tool-wrap .lead{color:var(--ink-soft);font-size:1.05rem}
+.tool-wrap h2,.tool-wrap h3{letter-spacing:-.01em;color:var(--ink)}
+.drop-zone{
+    border:2px dashed #b4a9c6;border-radius:var(--radius);
+    padding:2.2rem 1rem;text-align:center;background:#f2f4f8;cursor:pointer;
+    transition:background .15s,border-color .15s;
+}
+.drop-zone:hover,.drop-zone.dragover{background:#e4eaf2;border-color:var(--green-700)}
+.result-box{background:var(--green-050);border:1px solid #d8cfe6;border-radius:var(--radius);padding:1.1rem}
+.table{--bs-table-border-color:var(--line-soft)}
+.table thead th{font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- FAQ ---------- */
+#faq ~ h3{font-size:1.02rem;font-weight:650;margin-top:1.4rem}
+#faq ~ p{color:var(--ink-soft);max-width:820px}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--green-950);color:#d5cfe0;margin-top:4rem}
+.site-footer .footer-brand{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.site-footer h5,.site-footer h6{color:#fff;font-weight:650}
+.site-footer p{color:#b4a9c6;font-size:.93rem}
+.footer-links{padding-left:0;list-style:none}
+.footer-links li{margin-bottom:.45rem}
+.footer-links a,.footer-links-a{color:#ded9e9;text-decoration:none;font-size:.93rem}
+.footer-links a:hover,.footer-links-a:hover{color:#fff;text-decoration:underline}
+.site-footer .contact-line{display:flex;gap:.55rem;align-items:flex-start;margin-bottom:.55rem;color:#ded9e9;font-size:.93rem}
+.site-footer .contact-line svg{width:16px;height:16px;flex:0 0 16px;margin-top:.28rem;color:var(--amber)}
+.site-footer hr{border-color:rgba(255,255,255,.14)}
+.footer-bottom{font-size:.84rem;color:#9e8fb3}
+
+/* no-results notice */
+#noResults{border-radius:var(--radius)}
+
+/* ============================================================
+   Design v3 — iLovePDF-style PDF feature tiles, tool-page hero,
+   PDF accent variant, focus/entrance polish
+   ============================================================ */
+
+/* category icon tints also when a .cat-sub sits between heading and grid */
+.category-title#bills + .cat-sub + .tool-grid .icon{background:#fdf0e2;color:#b96a12}
+.category-title#solar + .cat-sub + .tool-grid .icon{background:#fdf3e0;color:#c07f10}
+.category-title#pdf + .cat-sub + .tool-grid .icon{background:#fdecec;color:#b3382e}
+.category-title#image + .cat-sub + .tool-grid .icon{background:#e9f0fd;color:#2f5aa8}
+.category-title#photo + .cat-sub + .tool-grid .icon{background:#f3eafd;color:#6d3bbf}
+.category-title#media + .cat-sub + .tool-grid .icon{background:#fdeaf3;color:#b02a63}
+.category-title#finance + .cat-sub + .tool-grid .icon{background:#eee8f6;color:#3d1772}
+.category-title#health + .cat-sub + .tool-grid .icon{background:#fdeef0;color:#c23b4e}
+.category-title#electrical + .cat-sub + .tool-grid .icon{background:#e4eff0;color:#77800f}
+.category-title#developer + .cat-sub + .tool-grid .icon{background:#e9eef2;color:#3c556e}
+.category-title#business + .cat-sub + .tool-grid .icon{background:#f0ece4;color:#7a5c2e}
+
+/* ---------- Homepage: PDF feature tiles (iLovePDF feel) ---------- */
+.pdf-feature .tool-card{
+    padding:1.3rem 1.25rem!important;
+    border-radius:16px;
+}
+.pdf-feature .tool-card .icon{
+    width:56px;height:56px;border-radius:14px;
+}
+.pdf-feature .tool-card .icon svg{width:30px;height:30px}
+.pdf-feature .tool-card h3{font-size:1.07rem;margin-top:.85rem}
+.pdf-feature .tool-card p{font-size:.88rem}
+.pdf-feature > div:nth-child(6n+1) .tool-card .icon{background:#fdecec;color:#c0392b}
+.pdf-feature > div:nth-child(6n+2) .tool-card .icon{background:#fdf3e0;color:#c07f10}
+.pdf-feature > div:nth-child(6n+3) .tool-card .icon{background:#e9f0fd;color:#2f5aa8}
+.pdf-feature > div:nth-child(6n+4) .tool-card .icon{background:#eee8f6;color:#3d1772}
+.pdf-feature > div:nth-child(6n+5) .tool-card .icon{background:#f3eafd;color:#6d3bbf}
+.pdf-feature > div:nth-child(6n+6) .tool-card .icon{background:#e6f4f4;color:#14707a}
+.pdf-feature .tool-card:hover{border-color:#d8a49d;box-shadow:0 12px 28px rgba(192,57,43,.10)}
+
+/* ---------- Tool-page hero ---------- */
+.tool-wrap{padding-top:.4rem}
+.tool-wrap .lead,.pdf-tool .lead{
+    border-bottom:1px solid var(--line-soft);
+    padding-bottom:1.05rem;margin-bottom:1.35rem;
+}
+main .container.py-4 h1{
+    font-family:var(--font-display);font-weight:700;letter-spacing:-.015em;
+    font-size:clamp(1.7rem,3.4vw,2.3rem);color:var(--ink);
+}
+main .container.py-4 .lead{color:var(--ink-soft);font-size:1.05rem}
+
+/* ---------- PDF tool accent (red-rose, iLovePDF family) ---------- */
+.pdf-tool{--pdf-accent:#c0392b;--pdf-accent-dark:#96281b;--pdf-soft:#fdeeec;--pdf-line:#e8b3ac}
+.pdf-tool h1{position:relative;padding-bottom:.55rem}
+.pdf-tool h1::after{
+    content:"";position:absolute;left:2px;bottom:0;
+    width:56px;height:4px;border-radius:2px;background:var(--pdf-accent);
+}
+.pdf-tool .btn-success,.pdf-tool .btn-primary{
+    background:var(--pdf-accent);border-color:var(--pdf-accent);color:#fff;
+}
+.pdf-tool .btn-success:hover,.pdf-tool .btn-primary:hover,
+.pdf-tool .btn-success:focus,.pdf-tool .btn-primary:focus{
+    background:var(--pdf-accent-dark);border-color:var(--pdf-accent-dark);color:#fff;
+}
+.pdf-tool .btn-outline-success{color:var(--pdf-accent);border-color:var(--pdf-accent)}
+.pdf-tool .btn-outline-success:hover{background:var(--pdf-accent);border-color:var(--pdf-accent);color:#fff}
+.pdf-tool .drop-zone{border-color:var(--pdf-line);background:#fdf7f6}
+.pdf-tool .drop-zone:hover,.pdf-tool .drop-zone.dragover{background:var(--pdf-soft);border-color:var(--pdf-accent)}
+.pdf-tool .result-box{background:var(--pdf-soft);border-color:var(--pdf-line)}
+.pdf-tool .form-control:focus,.pdf-tool .form-select:focus{
+    border-color:var(--pdf-accent);box-shadow:0 0 0 4px rgba(192,57,43,.13);
+}
+.pdf-tool a{color:var(--pdf-accent)}
+.pdf-tool a:hover{color:var(--pdf-accent-dark)}
+
+/* ---------- Polish: focus states, result entrance, mobile ---------- */
+:focus-visible{outline:3px solid rgba(66,14,107,.45);outline-offset:2px;border-radius:6px}
+.pdf-tool :focus-visible{outline-color:rgba(192,57,43,.45)}
+.tool-card a:focus-visible{outline-offset:-3px}
+.result-box{animation:azFadeUp .35s ease both}
+@keyframes azFadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.result-box{animation:none}}
+@media (max-width:575px){
+    .tool-card{padding:.95rem!important}
+    .pdf-feature .tool-card{padding:1.05rem .95rem!important}
+    .drop-zone{padding:1.6rem .8rem}
+    main{padding-top:1.2rem}
+}
+
+
+
+/* ============================================================
+   Design v4 — beauty pass: rich dark hero with live rates card,
+   featured tiles, card arrows, category markers, deeper polish
+   ============================================================ */
+body{
+    background:
+        radial-gradient(1100px 480px at 85% -120px, rgba(66,14,107,.08), transparent 60%),
+        radial-gradient(900px 420px at -10% 240px, rgba(233,161,59,.06), transparent 55%),
+        var(--paper);
+}
+.site-header{box-shadow:0 6px 24px rgba(42,11,61,.06);backdrop-filter:saturate(1.1)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--paper)}
+::-webkit-scrollbar-thumb{background:#c4cacf;border-radius:8px;border:3px solid var(--paper)}
+::-webkit-scrollbar-thumb:hover{background:var(--green-700)}
+
+/* ---------- Hero v4: deep green panel ---------- */
+.hero{
+    background:
+        radial-gradient(720px 340px at 88% -60px, rgba(233,161,59,.22), transparent 60%),
+        radial-gradient(640px 420px at -8% 115%, rgba(81,18,128,.35), transparent 55%),
+        linear-gradient(155deg,#300d4a 0%,#2a0b3d 52%,#1a0727 100%);
+    border:1px solid #230a35;border-radius:22px;color:#efeef5;
+    padding:3.2rem 3.2rem 2.8rem;
+    display:grid;grid-template-columns:1.12fr .88fr;gap:2.6rem;align-items:center;
+    box-shadow:0 24px 48px -18px rgba(29,8,43,.45);
+}
+.hero::before{opacity:.14;background-image:radial-gradient(rgba(255,255,255,.5) 1.1px,transparent 1.1px)}
+.hero-inner{max-width:none}
+.hero-eyebrow{color:var(--amber)}
+.hero h1{color:#fdfcf7}
+.hero h1 em{color:var(--amber)}
+.hero-sub{color:#d0c9de}
+.hero-search .form-control{border:none;box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.hero-meta strong{color:#fff}
+.hero-meta span{color:#a89dbd}
+.hero-popular{color:#a89dbd}
+.hero-popular a{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.22);color:#ebe7f1}
+.hero-popular a:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.45);color:#fff}
+@media (max-width:991px){.hero{grid-template-columns:1fr}}
+@media (max-width:767px){.hero{padding:2.1rem 1.3rem 1.9rem}}
+
+/* hero visual: rates card + floating chips */
+.hero-visual{position:relative;display:flex;flex-direction:column;gap:1rem}
+.hv-card{
+    background:#fffdf9;color:var(--ink);border-radius:16px;
+    box-shadow:0 18px 36px -12px rgba(0,0,0,.35);
+    padding:1.15rem 1.25rem;
+}
+.hv-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.55rem}
+.hv-head strong{font-family:var(--font-display);font-size:1.02rem;color:var(--green-900)}
+.hv-head span{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b3762a;background:var(--amber-soft);border-radius:999px;padding:.14rem .55rem}
+.hv-row{display:flex;justify-content:space-between;gap:1rem;padding:.42rem 0;border-top:1px dashed var(--line-soft);font-size:.9rem}
+.hv-row:first-of-type{border-top:none}
+.hv-row span{color:var(--ink-soft)}
+.hv-row b{color:var(--green-900);white-space:nowrap}
+.hv-foot{margin-top:.6rem;font-size:.8rem;color:var(--muted)}
+.hv-foot a{font-weight:650}
+.hv-chips{display:flex;gap:.7rem;flex-wrap:wrap}
+.hv-chip{
+    flex:1 1 150px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);
+    border-radius:14px;padding:.8rem .95rem;color:#efeef5;text-decoration:none;
+    display:flex;gap:.65rem;align-items:center;backdrop-filter:blur(2px);
+    transition:background .15s,transform .15s;
+}
+.hv-chip:hover{background:rgba(255,255,255,.16);color:#fff;transform:translateY(-2px)}
+.hv-chip .icon{width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;flex:0 0 38px}
+.hv-chip .icon svg{width:20px;height:20px}
+.hv-chip strong{display:block;font-size:.9rem;line-height:1.25}
+.hv-chip span{font-size:.76rem;color:#b4a9c6}
+@keyframes azFloat{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+.hero-visual .hv-card{animation:azFloat 5.5s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.hero-visual .hv-card{animation:none}}
+
+/* ---------- Featured strip ---------- */
+.featured{margin:2.4rem 0 .4rem}
+.featured-head{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin-bottom:1rem}
+.featured-head h2{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--ink);margin:0}
+.featured-head p{color:var(--muted);font-size:.93rem;margin:0}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media (max-width:991px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.feature-grid{grid-template-columns:1fr}}
+.feature-tile{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:1.25rem 1.2rem 1.1rem;text-decoration:none;color:inherit;display:block;
+    box-shadow:0 2px 6px rgba(30,23,37,.04);
+    transition:transform .16s,box-shadow .16s,border-color .16s;
+}
+.feature-tile:hover{transform:translateY(-4px);box-shadow:0 16px 32px -12px rgba(42,11,61,.18);border-color:#c0b9ce;color:inherit}
+.feature-tile .icon{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:var(--green-050);color:var(--green-700)}
+.feature-tile .icon svg{width:27px;height:27px}
+.feature-tile h3{font-size:1.03rem;font-weight:680;margin:.8rem 0 .3rem;color:var(--ink)}
+.feature-tile p{font-size:.86rem;color:var(--muted);margin-bottom:.7rem;line-height:1.5}
+.feature-tile .go{font-size:.85rem;font-weight:680;color:var(--green-700)}
+.feature-tile:nth-child(1) .icon{background:#fdf0e2;color:#b96a12}
+.feature-tile:nth-child(2) .icon{background:#fdf3e0;color:#c07f10}
+.feature-tile:nth-child(3) .icon{background:#fdecec;color:#b3382e}
+.feature-tile:nth-child(4) .icon{background:#e9eef2;color:#3c556e}
+
+/* ---------- Cards: softer depth + hover arrow ---------- */
+.tool-card{box-shadow:0 1px 3px rgba(30,23,37,.05);position:relative}
+.tool-card a::after{
+    content:"\2192";position:absolute;right:.85rem;bottom:.6rem;
+    font-weight:700;color:var(--green-700);opacity:0;transform:translateX(-4px);
+    transition:opacity .15s,transform .15s;
+}
+.tool-card:hover a::after{opacity:1;transform:translateX(0)}
+.pdf-feature .tool-card a::after{color:#b3382e}
+.tool-card .icon{box-shadow:inset 0 0 0 1px rgba(30,23,37,.05)}
+
+/* category markers */
+.category-title::before{
+    content:"";width:11px;height:11px;border-radius:3.5px;flex:0 0 11px;
+    background:var(--green-700);align-self:center;
+}
+.category-title#bills::before{background:#e08a1e}
+.category-title#solar::before{background:#d99a17}
+.category-title#pdf::before{background:#c0392b}
+.category-title#image::before{background:#2f5aa8}
+.category-title#photo::before{background:#6d3bbf}
+.category-title#media::before{background:#b02a63}
+.category-title#finance::before{background:#3d1772}
+.category-title#health::before{background:#c23b4e}
+.category-title#electrical::before{background:#77800f}
+.category-title#developer::before{background:#3c556e}
+.category-title#business::before{background:#7a5c2e}
+
+/* ---------- Tool pages: heading bar, richer cards, drop-zone art ---------- */
+.tool-wrap h1{position:relative;padding-bottom:.55rem}
+.tool-wrap h1::after{content:"";position:absolute;left:2px;bottom:0;width:56px;height:4px;border-radius:2px;background:var(--green-700)}
+.pdf-tool h1::after{background:var(--pdf-accent)}
+.card{box-shadow:0 2px 8px rgba(30,23,37,.05)}
+.drop-zone{position:relative;padding-top:3.4rem}
+.drop-zone::before{
+    content:"";position:absolute;top:1.05rem;left:50%;transform:translateX(-50%);
+    width:30px;height:30px;opacity:.55;
+    background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230e6b4a' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4m0 0 4.5 4.5M12 4 7.5 8.5'/%3E%3Cpath d='M4 16.5V19a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-2.5'/%3E%3C/svg%3E");
+}
+.pdf-tool .drop-zone::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c0392b' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4m0 0 4.5 4.5M12 4 7.5 8.5'/%3E%3Cpath d='M4 16.5V19a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-2.5'/%3E%3C/svg%3E")}
+.btn-lg{padding:.7rem 1.5rem;font-size:1.02rem}
+.btn-primary,.btn-success,.btn-az{box-shadow:0 6px 16px -6px rgba(66,14,107,.5)}
+.btn-primary:hover,.btn-success:hover,.btn-az:hover{box-shadow:0 8px 20px -6px rgba(42,11,61,.55)}
+.form-control-lg{border-radius:12px}
+
+/* about strip + footer finishing */
+.about-strip{box-shadow:0 22px 44px -20px rgba(29,8,43,.5)}
+.site-footer{position:relative}
+.site-footer::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--amber),var(--green-600) 55%,transparent);
+}
+
+
+/* ============================================================
+   Design v5 — dark theme
+   Green-tinted near-black surfaces, bright brand green glow,
+   translucent category tints. Bootstrap itself flips via
+   data-bs-theme="dark" on <html>; this layer re-skins every
+   site-specific component (v1–v4 rules above stay as history).
+   ============================================================ */
+:root{
+    --ink:#17251f;
+    --ink-soft:#43554d;
+    --muted:#6d7f76;
+    --paper:#ffffff;
+    --card:#ffffff;
+    --card-2:#f8f6f1;
+    --line:#e6e0d2;
+    --line-soft:#efe9dc;
+    --green-950:#150a2e;
+    --green-900:#2a1065;
+    --green-700:#6d28d9;
+    --green-600:#7c3aed;
+    --green-050:#f3edfd;
+    --amber:#e9a13b;
+    --amber-soft:rgba(240,173,58,.14);
+}
+html,body{overflow-x:clip}
+img{max-width:100%}
+main img,main table{max-width:100%}
+body{
+    background:
+        radial-gradient(1100px 480px at 85% -120px, rgba(124,58,237,.06), transparent 60%),
+        radial-gradient(900px 420px at -10% 240px, rgba(240,173,58,.05), transparent 55%),
+        var(--paper);
+    color:var(--ink);
+}
+::selection{background:#511280;color:#fff}
+a{color:#823ecf}
+a:hover{color:#a57be2}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:#0f0c13}
+::-webkit-scrollbar-thumb{background:#342c46;border-radius:8px;border:3px solid #0f0c13}
+::-webkit-scrollbar-thumb:hover{background:var(--green-700)}
+:focus-visible{outline:3px solid rgba(130,62,207,.5);outline-offset:2px}
+
+/* ---------- Top strip + header ---------- */
+.topbar{background:#08060d;color:#b4a9c6}
+.topbar a{color:#fff}
+.site-header{
+    background:rgba(18,16,23,.92);
+    background:#121017;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 6px 24px rgba(0,0,0,.35);
+    backdrop-filter:saturate(1.1) blur(6px);
+}
+.brand-name{color:var(--ink)}
+.brand-name em{color:#823ecf}
+.brand-tag{color:var(--muted)}
+.brand-mark{background:#240e3a;box-shadow:inset 0 0 0 1px #362450}
+.site-header .nav-link{color:var(--ink-soft)}
+.site-header .nav-link:hover{color:#fff;background:#1f1a2a}
+.navbar-toggler{border-color:var(--line)}
+.navbar-toggler:focus{box-shadow:0 0 0 4px rgba(130,62,207,.25)}
+
+/* ---------- Hero v5: deepened dark green ---------- */
+.hero{
+    background:
+        radial-gradient(720px 340px at 88% -60px, rgba(240,173,58,.20), transparent 60%),
+        radial-gradient(640px 420px at -8% 115%, rgba(115,37,181,.30), transparent 55%),
+        linear-gradient(155deg,#2b0d45 0%,#200933 52%,#10051c 100%);
+    border:1px solid #231236;color:#efeef5;
+    box-shadow:0 24px 48px -18px rgba(0,0,0,.6);
+}
+.hero::before{opacity:.12}
+.hero h1{color:#fdfcf7}
+.hero h1 em{color:var(--amber)}
+.hero-eyebrow{color:var(--amber)}
+.hero-sub{color:#d0c9de}
+.hero-search svg{color:#998fae}
+.hero-search .form-control{
+    background:#13101a;color:var(--ink);
+    border:1px solid #342c46;box-shadow:0 14px 30px rgba(0,0,0,.35);
+}
+.hero-search .form-control::placeholder{color:#857e96}
+.hero-search .form-control:focus{
+    background:#13101a;color:var(--ink);border-color:#823ecf;
+    box-shadow:0 14px 30px rgba(0,0,0,.35),0 0 0 4px rgba(130,62,207,.18);
+}
+.hero-meta strong{color:#fff}
+.hero-meta span{color:#a89dbd}
+.hero-popular{color:#a89dbd}
+.hero-popular a{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.22);color:#ebe7f1}
+.hero-popular a:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.45);color:#fff}
+
+/* hero visual: rates card flips to dark */
+.hv-card{
+    background:#1f1824;color:var(--ink);
+    border:1px solid #2a2435;
+    box-shadow:0 18px 36px -12px rgba(0,0,0,.55);
+}
+.hv-head strong{color:#fff}
+.hv-head span{color:#f5c569;background:rgba(240,173,58,.15)}
+.hv-row{border-top:1px dashed #2f2a3d}
+.hv-row span{color:#a49db4}
+.hv-row b{color:#9b6fe3}
+.hv-foot{color:#a49db4}
+.hv-foot a{color:#823ecf}
+.hv-chip{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#efeef5}
+.hv-chip:hover{background:rgba(255,255,255,.15);color:#fff}
+.hv-chip .icon{background:rgba(255,255,255,.12)}
+.hv-chip span{color:#b4a9c6}
+
+/* ---------- Category headings ---------- */
+.category-title{color:var(--ink);border-bottom:2px solid #823ecf}
+.category-title .cat-count{
+    color:#9b6fe3;background:#1d152a;border:1px solid #362450;
+}
+.cat-sub{color:var(--muted)}
+
+/* ---------- Category tiles (homepage) ---------- */
+.cat-grid{display:grid;gap:1rem;margin-top:1rem;grid-template-columns:repeat(2,1fr)}
+@media (min-width:576px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:992px){.cat-grid{grid-template-columns:repeat(4,1fr)}}
+.cat-tile{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:1.2rem 1.15rem;min-height:158px;display:block;height:100%;
+    text-decoration:none;color:inherit;
+    transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+.cat-tile:hover{
+    border-color:#4f2f7a;color:inherit;transform:translateY(-3px);
+    box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 0 0 1px rgba(130,62,207,.25);
+}
+.cat-tile .icon{
+    width:48px;height:48px;border-radius:12px;
+    background:rgba(130,62,207,.14);color:#823ecf;
+    display:flex;align-items:center;justify-content:center;
+}
+.cat-tile .icon svg{width:25px;height:25px}
+.cat-tile h3{font-size:1.02rem;font-weight:680;color:var(--ink);margin:.8rem 0 .3rem}
+.cat-tile p{font-size:.86rem;line-height:1.5;color:var(--muted);margin-bottom:0}
+.cat-tile-count{
+    display:inline-block;font-size:.72rem;font-weight:650;letter-spacing:.03em;
+    color:#9b6fe3;background:#1d152a;border:1px solid #362450;
+    border-radius:999px;padding:.13rem .55rem;margin-top:.6rem;
+}
+
+/* ---------- Tool + feature cards ---------- */
+.tool-card{
+    background:var(--card);border:1px solid var(--line);
+    box-shadow:0 1px 3px rgba(0,0,0,.35);
+}
+.tool-card:hover{
+    border-color:#4f2f7a;
+    box-shadow:0 12px 28px -10px rgba(0,0,0,.6),0 0 0 1px rgba(130,62,207,.30);
+}
+.tool-card h3{color:var(--ink)}
+.tool-card p{color:var(--muted)}
+.tool-card .icon{background:rgba(130,62,207,.14);color:#823ecf;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+.tool-card a::after{color:#823ecf}
+.feature-tile{
+    background:var(--card);border:1px solid var(--line);
+    box-shadow:0 2px 6px rgba(0,0,0,.3);color:inherit;
+}
+.feature-tile:hover{border-color:#4f2f7a;box-shadow:0 16px 32px -12px rgba(0,0,0,.6);color:inherit}
+.feature-tile .icon{background:rgba(130,62,207,.14);color:#823ecf}
+.feature-tile h3{color:var(--ink)}
+.feature-tile p{color:var(--muted)}
+.feature-tile .go{color:#823ecf}
+.featured-head h2{color:var(--ink)}
+.featured-head p{color:var(--muted)}
+
+/* per-category icon tints — translucent dark versions of the v4 hues.
+   Covers plain grids, .cat-sub variants, and homepage tiles sharing
+   the same heading-adjacent structure. */
+.category-title#bills + .tool-grid .icon,
+.category-title#bills + .cat-sub + .tool-grid .icon{background:rgba(224,138,30,.16);color:#f0a63e}
+.category-title#solar + .tool-grid .icon,
+.category-title#solar + .cat-sub + .tool-grid .icon{background:rgba(217,154,23,.16);color:#f0b429}
+.category-title#pdf + .tool-grid .icon,
+.category-title#pdf + .cat-sub + .tool-grid .icon{background:rgba(224,101,90,.16);color:#f0766a}
+.category-title#image + .tool-grid .icon,
+.category-title#image + .cat-sub + .tool-grid .icon{background:rgba(110,168,254,.15);color:#6ea8fe}
+.category-title#photo + .tool-grid .icon,
+.category-title#photo + .cat-sub + .tool-grid .icon{background:rgba(177,151,252,.15);color:#b197fc}
+.category-title#media + .tool-grid .icon,
+.category-title#media + .cat-sub + .tool-grid .icon{background:rgba(247,131,172,.14);color:#f783ac}
+.category-title#finance + .tool-grid .icon,
+.category-title#finance + .cat-sub + .tool-grid .icon{background:rgba(128,81,207,.14);color:#8051cf}
+.category-title#health + .tool-grid .icon,
+.category-title#health + .cat-sub + .tool-grid .icon{background:rgba(255,135,149,.14);color:#ff8795}
+.category-title#electrical + .tool-grid .icon,
+.category-title#electrical + .cat-sub + .tool-grid .icon{background:rgba(183,194,57,.15);color:#c6cf4a}
+.category-title#developer + .tool-grid .icon,
+.category-title#developer + .cat-sub + .tool-grid .icon{background:rgba(143,176,204,.16);color:#8fb0cc}
+.category-title#business + .tool-grid .icon,
+.category-title#business + .cat-sub + .tool-grid .icon{background:rgba(217,179,108,.15);color:#d9b36c}
+
+/* PDF feature tiles + featured strip: nth-child tints on dark */
+.pdf-feature > div:nth-child(6n+1) .tool-card .icon{background:rgba(224,101,90,.16);color:#f0766a}
+.pdf-feature > div:nth-child(6n+2) .tool-card .icon{background:rgba(217,154,23,.16);color:#f0b429}
+.pdf-feature > div:nth-child(6n+3) .tool-card .icon{background:rgba(110,168,254,.15);color:#6ea8fe}
+.pdf-feature > div:nth-child(6n+4) .tool-card .icon{background:rgba(128,81,207,.14);color:#8051cf}
+.pdf-feature > div:nth-child(6n+5) .tool-card .icon{background:rgba(177,151,252,.15);color:#b197fc}
+.pdf-feature > div:nth-child(6n+6) .tool-card .icon{background:rgba(63,196,204,.14);color:#3fc4cc}
+.pdf-feature .tool-card:hover{border-color:#7a443d;box-shadow:0 12px 28px -10px rgba(0,0,0,.6),0 0 0 1px rgba(224,101,90,.30)}
+.pdf-feature .tool-card a::after{color:#f0766a}
+.feature-tile:nth-child(1) .icon{background:rgba(224,138,30,.16);color:#f0a63e}
+.feature-tile:nth-child(2) .icon{background:rgba(217,154,23,.16);color:#f0b429}
+.feature-tile:nth-child(3) .icon{background:rgba(224,101,90,.16);color:#f0766a}
+.feature-tile:nth-child(4) .icon{background:rgba(143,176,204,.16);color:#8fb0cc}
+
+/* category markers keep their hues (already legible on dark) */
+
+/* ---------- About strip ---------- */
+.about-strip{
+    background:linear-gradient(155deg,#240e3a,#170727);
+    color:#ebe7f1;border:1px solid #231236;
+    box-shadow:0 22px 44px -20px rgba(0,0,0,.65);
+}
+.about-strip h2{color:#fff}
+.about-strip p{color:#d0c8dd}
+.about-strip .about-facts strong{color:#fff}
+.about-strip .about-facts span{color:#b4a9c6}
+
+/* ---------- Buttons ---------- */
+.btn-primary,.btn-az{background:#511280;border-color:#511280;color:#fff;box-shadow:0 6px 16px -6px rgba(81,18,128,.55)}
+.btn-primary:hover,.btn-az:hover{background:#691da3;border-color:#691da3;color:#fff;box-shadow:0 8px 20px -6px rgba(81,18,128,.6)}
+.btn-success{background:#691da3;border-color:#691da3;color:#fff}
+.btn-success:hover{background:#7325b5;border-color:#7325b5;color:#fff}
+.btn-outline-success{color:#823ecf;border-color:#4f2f7a}
+.btn-outline-success:hover{background:#511280;border-color:#511280;color:#fff}
+.btn-outline-secondary{color:var(--ink-soft);border-color:var(--line)}
+.btn-outline-secondary:hover{background:#1f1a2a;color:#fff;border-color:#4f2f7a}
+.border-success{border-color:#362450!important}
+.badge.bg-success{background:#511280!important;color:#fff}
+
+/* ---------- Forms + Bootstrap surfaces (safety net over data-bs-theme) ---------- */
+.form-control,.form-select{
+    background-color:#15131c;color:var(--ink);
+    border:1px solid var(--line);border-radius:10px;
+}
+.form-control::placeholder{color:#857e96}
+.form-control:focus,.form-select:focus{
+    background-color:#15131c;color:var(--ink);
+    border-color:#823ecf;box-shadow:0 0 0 4px rgba(130,62,207,.15);
+}
+.form-select{
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%239db4a6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+.form-check-input{background-color:#15131c;border-color:var(--line)}
+.form-check-input:checked{background-color:#511280;border-color:#511280}
+.input-group-text{background:#1f1824;color:var(--ink-soft);border-color:var(--line)}
+.card{background:var(--card);border:1px solid var(--line);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.card-header{background:#1f1824;color:var(--ink);border-bottom:1px solid var(--line)}
+.card-header.bg-primary{background:#240e3a!important;color:#fff}
+.card-footer{background:#121017;border-top:1px solid var(--line)}
+.alert-info{background:#10222b;border-color:#1f4a5c;color:#a9d6e8}
+.alert-warning{background:rgba(240,173,58,.13);border-color:rgba(240,173,58,.4);color:#f5d9a0}
+.alert-success{background:#1b1229;border-color:#362450;color:#bea9e6}
+.alert-danger{background:rgba(224,101,90,.13);border-color:rgba(224,101,90,.4);color:#f5b3ac}
+.table{
+    --bs-table-bg:transparent;--bs-table-color:var(--ink);
+    --bs-table-border-color:var(--line-soft);
+    --bs-table-striped-bg:rgba(255,255,255,.03);
+    --bs-table-hover-bg:rgba(130,62,207,.06);
+    color:var(--ink);
+}
+.table thead th{color:var(--muted)}
+code{background:#0c0a0f;color:#b08ce8;padding:.12rem .35rem;border-radius:6px;border:1px solid #231e2d}
+pre{background:#0c0a0f;color:#d6cfe8;border:1px solid var(--line-soft);border-radius:10px;padding:1rem;overflow-x:auto}
+pre code{background:transparent;border:none;padding:0;color:inherit}
+.list-group-item{background:var(--card);color:var(--ink);border-color:var(--line)}
+.accordion-item{background:var(--card);color:var(--ink);border-color:var(--line)}
+.accordion-button{background:#1f1824;color:var(--ink)}
+.accordion-button:not(.collapsed){background:#1d152a;color:#9b6fe3}
+.modal-content{background:var(--card-2);color:var(--ink);border:1px solid var(--line)}
+.dropdown-menu{background:var(--card-2);color:var(--ink);border:1px solid var(--line)}
+.dropdown-item{color:var(--ink-soft)}
+.dropdown-item:hover,.dropdown-item:focus{background:#1f1a2a;color:#fff}
+hr{border-color:var(--line);opacity:1}
+.text-muted{color:var(--muted)!important}
+.bg-light{background-color:#1f1824!important}
+.bg-white{background-color:var(--card)!important}
+
+/* ---------- Tool pages ---------- */
+.tool-wrap h1{color:var(--ink)}
+.tool-wrap h1::after{background:#823ecf}
+.tool-wrap .lead{color:var(--ink-soft);border-bottom-color:var(--line-soft)}
+.tool-wrap h2,.tool-wrap h3{color:var(--ink)}
+main .container.py-4 h1{color:var(--ink)}
+main .container.py-4 .lead{color:var(--ink-soft)}
+.drop-zone{
+    border:2px dashed #3d3350;background:#13101a;color:var(--ink-soft);
+}
+.drop-zone:hover,.drop-zone.dragover{background:#1c142a;border-color:#823ecf}
+.drop-zone::before{
+    opacity:.85;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233ecf8e' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4m0 0 4.5 4.5M12 4 7.5 8.5'/%3E%3Cpath d='M4 16.5V19a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-2.5'/%3E%3C/svg%3E");
+}
+.result-box{background:#1b1229;border:1px solid #362450;color:#e4dff2}
+#noResults{background:#1f1824;border:1px solid var(--line);color:var(--ink-soft)}
+
+/* ---------- PDF tool accent (brightened rose for dark) ---------- */
+.pdf-tool{--pdf-accent:#e0655a;--pdf-accent-dark:#c94f45;--pdf-soft:rgba(224,101,90,.12);--pdf-line:rgba(224,101,90,.38)}
+.pdf-tool h1::after{background:var(--pdf-accent)}
+.pdf-tool .btn-success,.pdf-tool .btn-primary{background:var(--pdf-accent);border-color:var(--pdf-accent);color:#fff;box-shadow:0 6px 16px -6px rgba(224,101,90,.5)}
+.pdf-tool .btn-success:hover,.pdf-tool .btn-primary:hover,
+.pdf-tool .btn-success:focus,.pdf-tool .btn-primary:focus{background:var(--pdf-accent-dark);border-color:var(--pdf-accent-dark);color:#fff}
+.pdf-tool .btn-outline-success{color:#f0766a;border-color:rgba(224,101,90,.55)}
+.pdf-tool .btn-outline-success:hover{background:var(--pdf-accent);border-color:var(--pdf-accent);color:#fff}
+.pdf-tool .drop-zone{border-color:rgba(224,101,90,.45);background:#1a1214}
+.pdf-tool .drop-zone:hover,.pdf-tool .drop-zone.dragover{background:rgba(224,101,90,.12);border-color:var(--pdf-accent)}
+.pdf-tool .drop-zone::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e0655a' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4m0 0 4.5 4.5M12 4 7.5 8.5'/%3E%3Cpath d='M4 16.5V19a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-2.5'/%3E%3C/svg%3E")}
+.pdf-tool .result-box{background:rgba(224,101,90,.10);border-color:rgba(224,101,90,.38);color:#f7e3e0}
+.pdf-tool .form-control:focus,.pdf-tool .form-select:focus{border-color:var(--pdf-accent);box-shadow:0 0 0 4px rgba(224,101,90,.18)}
+.pdf-tool a{color:#f0766a}
+.pdf-tool a:hover{color:#ff9a8f}
+.pdf-tool :focus-visible{outline-color:rgba(224,101,90,.55)}
+
+/* ---------- FAQ ---------- */
+#faq ~ h3{color:var(--ink)}
+#faq ~ p{color:var(--ink-soft)}
+
+/* ---------- Footer (darker than page bg) ---------- */
+.site-footer{background:#0a080d;color:#d5cfe0}
+.site-footer h5,.site-footer h6{color:#fff}
+.site-footer p{color:#b4a9c6}
+.footer-links a,.footer-links-a{color:#ded9e9}
+.footer-links a:hover,.footer-links-a:hover{color:#fff}
+.site-footer .contact-line{color:#ded9e9}
+.site-footer hr{border-color:rgba(255,255,255,.12)}
+.footer-bottom{color:#9e8fb3}
+
+/* ---------- Mobile hardening ---------- */
+@media (max-width:991px){
+    .hero{grid-template-columns:1fr}
+    .hero-visual{margin-top:.4rem}
+    .feature-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:767px){
+    .hero{padding:2.1rem 1.3rem 1.9rem}
+    .hero-visual{margin-top:.2rem}
+    .hv-chips{flex-direction:column;gap:.6rem}
+    .hv-chip{flex:1 1 auto;width:100%}
+    .category-title{font-size:1.32rem;margin-top:2.3rem}
+    .about-strip{grid-template-columns:1fr;padding:1.8rem 1.4rem}
+    main{padding-top:1.4rem}
+}
+@media (max-width:575px){
+    .tool-card{padding:.95rem!important}
+    .pdf-feature .tool-card{padding:1.05rem .95rem!important}
+    .cat-tile{padding:1rem .9rem;min-height:148px}
+    .feature-grid{grid-template-columns:1fr}
+    .drop-zone{padding:1.6rem .8rem;padding-top:3.2rem}
+    .hero-meta{gap:1.4rem}
+    .topbar .container{justify-content:center}
+}
+@media (max-width:520px){.feature-grid{grid-template-columns:1fr}}
+.table-responsive{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ---------- v6 recolour: Bootstrap success -> violet brand ---------- */
+.btn-success{--bs-btn-bg:#7c3aed;--bs-btn-border-color:#7c3aed;--bs-btn-hover-bg:#6d28d9;--bs-btn-hover-border-color:#5b21b6;--bs-btn-active-bg:#5b21b6;--bs-btn-active-border-color:#4c1d95;--bs-btn-disabled-bg:#7c3aed;--bs-btn-disabled-border-color:#7c3aed}
+.btn-outline-success{--bs-btn-color:#a78bfa;--bs-btn-border-color:#7c3aed;--bs-btn-hover-bg:#7c3aed;--bs-btn-hover-border-color:#7c3aed;--bs-btn-active-bg:#6d28d9;--bs-btn-active-border-color:#6d28d9;--bs-btn-disabled-color:#a78bfa;--bs-btn-disabled-border-color:#7c3aed}
+.bg-success{background-color:#7c3aed!important}
+.text-success{color:#a78bfa!important}
+.border-success{border-color:#7c3aed!important}
+.link-success{color:#a78bfa!important}
+.alert-success{background-color:rgba(124,58,237,.16);border-color:rgba(124,58,237,.45);color:#e9d8fd}
+.progress-bar{background-color:#7c3aed}
+
+/* ---------- v7: white theme (user order) — light surfaces, violet brand kept ---------- */
+a{color:#6d28d9}
+a:hover{color:#5b21b6}
+::-webkit-scrollbar-track{background:#f1eafd}
+::-webkit-scrollbar-thumb{background:#c4b5fd;border:3px solid #f1eafd}
+::-webkit-scrollbar-thumb:hover{background:#a78bfa}
+:focus-visible{outline:3px solid rgba(124,58,237,.45);outline-offset:2px}
+
+/* top strip + header */
+.topbar{background:#f1eafd;color:#5b21b6}
+.topbar a{color:#6d28d9}
+.site-header{background:#ffffff;border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(23,37,31,.08);backdrop-filter:none}
+.brand-mark{background:#f1eafd;box-shadow:inset 0 0 0 1px #e0d4fa}
+.site-header .nav-link:hover{color:#2a1065;background:#f3edfd}
+.navbar-toggler:focus{box-shadow:0 0 0 4px rgba(124,58,237,.2)}
+
+/* hero — light panel */
+.hero{
+    background:
+        radial-gradient(720px 340px at 88% -60px, rgba(240,173,58,.16), transparent 60%),
+        radial-gradient(640px 420px at -8% 115%, rgba(124,58,237,.12), transparent 55%),
+        linear-gradient(155deg,#ffffff 0%,#f7f3ff 60%,#f1eafd 100%);
+    border:1px solid #e6ddf7;color:#17251f;
+    box-shadow:0 18px 40px -20px rgba(81,18,128,.22);
+}
+.hero h1{color:#17251f}
+.hero h1 em{color:#c07f10}
+.hero-eyebrow{color:#c07f10}
+.hero-sub{color:#43554d}
+.hero-search svg{color:#6d7f76}
+.hero-search .form-control{background:#ffffff;color:#17251f;border:1px solid #d9d2e8;box-shadow:0 10px 24px rgba(81,18,128,.08)}
+.hero-search .form-control::placeholder{color:#9a917f}
+.hero-search .form-control:focus{background:#ffffff;color:#17251f;border-color:#7c3aed;box-shadow:0 10px 24px rgba(81,18,128,.1),0 0 0 4px rgba(124,58,237,.15)}
+.hero-meta strong{color:#17251f}
+.hero-meta span{color:#6d7f76}
+.hero-popular{color:#6d7f76}
+.hero-popular a{background:#f3edfd;border-color:#e0d4fa;color:#5b21b6}
+.hero-popular a:hover{background:#e9defc;border-color:#c4b5fd;color:#2a1065}
+
+/* hero rates card */
+.hv-card{background:#ffffff;color:#17251f;border:1px solid #e6ddf7;box-shadow:0 14px 30px -14px rgba(81,18,128,.22)}
+.hv-head strong{color:#17251f}
+.hv-head span{color:#a06a08;background:rgba(240,173,58,.16)}
+.hv-row{border-top:1px dashed #e0d4fa}
+.hv-row span{color:#6d7f76}
+.hv-row b{color:#6d28d9}
+.hv-foot{color:#6d7f76}
+.hv-foot a{color:#6d28d9}
+.hv-chip{background:#f7f3ff;border-color:#e6ddf7;color:#2a1065}
+.hv-chip:hover{background:#f1eafd;color:#2a1065}
+.hv-chip .icon{background:rgba(124,58,237,.12)}
+.hv-chip span{color:#5b21b6}
+
+/* pills + counts */
+.category-title .cat-count,.cat-tile-count{color:#5b21b6;background:#f3edfd;border:1px solid #e0d4fa}
+
+/* cards hover shadow softened for white */
+.cat-tile:hover{box-shadow:0 14px 30px -12px rgba(81,18,128,.22),0 0 0 1px rgba(124,58,237,.25)}
+.tool-card{box-shadow:0 1px 3px rgba(23,37,31,.08)}
+.tool-card:hover{box-shadow:0 12px 28px -10px rgba(81,18,128,.22),0 0 0 1px rgba(124,58,237,.3)}
+.feature-tile{box-shadow:0 2px 6px rgba(23,37,31,.06)}
+.feature-tile:hover{box-shadow:0 16px 32px -12px rgba(81,18,128,.2)}
+.tool-card .icon{box-shadow:inset 0 0 0 1px rgba(124,58,237,.08)}
+.pdf-feature .tool-card:hover{border-color:#e0655a;box-shadow:0 12px 28px -10px rgba(224,101,90,.25),0 0 0 1px rgba(224,101,90,.3)}
+
+/* about strip — light */
+.about-strip{background:linear-gradient(155deg,#f7f3ff,#efe6fd);color:#2a2340;border:1px solid #e6ddf7;box-shadow:0 18px 36px -20px rgba(81,18,128,.22)}
+.about-strip h2{color:#17251f}
+.about-strip p{color:#43554d}
+.about-strip .about-facts strong{color:#17251f}
+.about-strip .about-facts span{color:#6d7f76}
+
+/* buttons */
+.btn-outline-success{color:#6d28d9;border-color:#c4b5fd}
+.btn-outline-secondary:hover{background:#f3edfd;color:#2a1065;border-color:#c4b5fd}
+.btn-success,.btn-az{background:#6d28d9;border-color:#6d28d9}
+.btn-success:hover,.btn-az:hover{background:#5b21b6;border-color:#5b21b6}
+
+/* forms */
+.form-control,.form-select{background-color:#ffffff;color:#17251f}
+.form-control::placeholder{color:#9a917f}
+.form-control:focus,.form-select:focus{background-color:#ffffff;color:#17251f;border-color:#7c3aed;box-shadow:0 0 0 4px rgba(124,58,237,.12)}
+.form-select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236d7f76' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")}
+.form-check-input{background-color:#ffffff}
+.form-check-input:checked{background-color:#6d28d9;border-color:#6d28d9}
+.input-group-text{background:#f7f4fc;color:#43554d}
+
+/* bootstrap surfaces */
+.card{box-shadow:0 2px 8px rgba(23,37,31,.07)}
+.card-header{background:#f7f4fc}
+.card-footer{background:#f7f4fc}
+.alert-info{background:#e9f2fb;border-color:#bcd8ea;color:#1f4a5c}
+.alert-warning{background:#fdf3e0;border-color:#f0d9a8;color:#8a5a10}
+.alert-danger{background:#fdecec;border-color:#f5c6c0;color:#96281b}
+.table{--bs-table-striped-bg:rgba(23,37,31,.03);--bs-table-hover-bg:rgba(124,58,237,.05)}
+code{background:#f7f3ff;color:#6d28d9;border:1px solid #e6ddf7}
+pre{background:#f7f4fc;color:#2a2340}
+.list-group-item{background:#ffffff}
+.accordion-item{background:#ffffff}
+.accordion-button{background:#f7f4fc}
+.accordion-button:not(.collapsed){background:#f3edfd;color:#5b21b6}
+.modal-content{background:#ffffff}
+.dropdown-menu{background:#ffffff}
+.dropdown-item:hover,.dropdown-item:focus{background:#f3edfd;color:#2a1065}
+.bg-light{background-color:#f7f4fc!important}
+
+/* tool pages */
+.drop-zone{border:2px dashed #c4b5fd;background:#fbfaff;color:#43554d}
+.drop-zone:hover,.drop-zone.dragover{background:#f5f0ff;border-color:#7c3aed}
+.drop-zone::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4m0 0 4.5 4.5M12 4 7.5 8.5'/%3E%3Cpath d='M4 16.5V19a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-2.5'/%3E%3C/svg%3E")}
+.result-box{background:#f7f3ff;border:1px solid #d9c8f5;color:#2a2340}
+#noResults{background:#f7f4fc;color:#43554d}
+.pdf-tool .drop-zone{background:#fdf7f6}
+.pdf-tool .result-box{background:rgba(224,101,90,.07);border-color:rgba(224,101,90,.38);color:#7a2a24}
+.pdf-tool a{color:#c0392b}
+.pdf-tool a:hover{color:#96281b}
+
+/* v6 success overrides — darker text for light theme */
+.text-success{color:#6d28d9!important}
+.link-success{color:#6d28d9!important}
+.alert-success{background-color:#f3edfd;border-color:#d9c8f5;color:#4c1d95}
+.border-success{border-color:#c4b5fd!important}
+
+/* footer — light */
+.site-footer{background:#f7f4fc;color:#43554d}
+.site-footer h5,.site-footer h6{color:#17251f}
+.site-footer p{color:#6d7f76}
+.footer-links a,.footer-links-a{color:#43554d}
+.footer-links a:hover,.footer-links-a:hover{color:#2a1065}
+.site-footer .contact-line{color:#43554d}
+.site-footer hr{border-color:#e6e0d2}
+.footer-bottom{color:#9a917f}
+
+/* ============================================================
+   Phase 8 (2026-10-02) — UI polish: sections/hero/buttons
+   ============================================================ */
+/* ============================================================
+   02-sections.css — Phase 8 CSS polish: page SECTIONS
+   Hero, category headers, featured strip, about strip, footer,
+   buttons & form inputs.
+   Light/white theme only. Does NOT restyle the dark .about-strip
+   or .topbar into light. Consumed by the coordinator (merges into
+   the app.css build), so selectors intentionally mirror existing
+   class names and only *refine* — no structural HTML changes.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. HERO
+   ------------------------------------------------------------ */
+.hero {
+  /* softer, more breathable vertical rhythm on all viewports */
+  padding: clamp(2rem, 5vw, 3.75rem) 0 clamp(2.25rem, 5vw, 3.5rem);
+}
+
+.hero-inner {
+  gap: 2rem; /* give hero-visual room even on mid widths */
+}
+
+.hero-eyebrow {
+  /* keep the pill shape, tighten letter-fit for small screens */
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.hero h1 {
+  /* fluid type that never crowds the viewport on phones */
+  font-size: clamp(1.75rem, 4.5vw + 0.75rem, 3rem);
+  line-height: 1.14;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 1.6vw + 0.75rem, 1.1rem);
+  line-height: 1.65;
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+}
+
+/* Search bar — keep the violet focus idea, refine the chrome */
+.hero-search {
+  margin-bottom: 1.25rem;
+}
+
+.hero-search .form-control,
+.hero-search input[type="search"],
+.hero-search input[type="text"] {
+  height: 3.25rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  font-size: 1rem;
+  padding: 0.75rem 1.15rem 0.75rem 3rem; /* room for a search icon */
+  color: var(--ink);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 1px 2px rgba(29, 8, 43, 0.05);
+}
+
+.hero-search .form-control::placeholder,
+.hero-search input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.hero-search .form-control:hover,
+.hero-search input:hover {
+  border-color: #cfc7bd;
+}
+
+.hero-search .form-control:focus,
+.hero-search input:focus {
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 4px rgba(66, 14, 107, 0.14), 0 4px 14px rgba(66, 14, 107, 0.08);
+  outline: none;
+}
+
+/* hero-meta stats: even spacing, no squeeze on narrow screens */
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.hero-meta .meta-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  line-height: 1.5;
+}
+
+.hero-meta .meta-stat strong {
+  color: var(--ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Popular-search chips — slightly more tappable, calmer default */
+.hero-popular {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.hero-popular a,
+.hero-popular .chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem; /* 40px tap target */
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease,
+    box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.hero-popular a:hover,
+.hero-popular .chip:hover {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-050);
+  box-shadow: 0 2px 8px rgba(66, 14, 107, 0.12);
+  transform: translateY(-1px);
+}
+
+.hero-popular a:focus-visible,
+.hero-popular .chip:focus-visible {
+  outline: none;
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 3px rgba(66, 14, 107, 0.25);
+}
+
+/* Hero visual cards — gentle depth, no dark restyle */
+.hero-visual {
+  gap: 1rem;
+}
+
+.hv-card {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  box-shadow: 0 10px 28px rgba(29, 8, 43, 0.08);
+}
+
+.hv-chip {
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 0.78rem;
+  padding: 0.45rem 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ------------------------------------------------------------
+   2. CATEGORY HEADERS — count pill + tighter section rhythm
+   ------------------------------------------------------------ */
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Refinement of the small count pill beside the serif title */
+.cat-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 1.65rem;
+  padding: 0 0.6rem;
+  border-radius: 999px;
+  background: var(--green-050);
+  border: 1px solid rgba(66, 14, 107, 0.18);
+  color: var(--green-700);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Tighter top-margin rhythm between consecutive sections */
+.category + .category,
+.featured + .category,
+section + section .category-title {
+  margin-top: 0;
+}
+
+section .category {
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: 1.25rem;
+}
+
+.cat-sub {
+  margin-top: 0.35rem;
+  margin-bottom: 1.25rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 62ch;
+}
+
+/* ------------------------------------------------------------
+   3. FEATURED STRIP
+   ------------------------------------------------------------ */
+.featured {
+  padding: clamp(2rem, 5vw, 3rem) 0;
+  background: linear-gradient(180deg, var(--green-050) 0%, #fff 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Prettier featured header: eyebrow + serif title + optional link */
+.featured-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.featured-head .featured-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  margin-bottom: 0.35rem;
+}
+
+.featured-head h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(1.35rem, 2.6vw + 0.8rem, 1.8rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.featured-head .featured-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--green-700);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.16s ease;
+  white-space: nowrap;
+}
+
+.featured-head .featured-link:hover {
+  border-bottom-color: var(--green-700);
+}
+
+/* Feature grid: fluid columns, graceful down to phones */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1rem;
+}
+
+.feature-tile {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.1rem;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.feature-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(66, 14, 107, 0.35);
+  box-shadow: 0 10px 24px rgba(29, 8, 43, 0.1);
+}
+
+.feature-tile .feature-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-050);
+  color: var(--green-700);
+  margin-bottom: 0.75rem;
+}
+
+.feature-tile .feature-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.feature-tile h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.35rem;
+}
+
+.feature-tile p {
+  font-size: 0.87rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ------------------------------------------------------------
+   4. BUTTONS & FORM INPUTS — global refinement
+   ------------------------------------------------------------ */
+
+/* Violet focus ring for anything interactive (keyboard-safe) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 14, 107, 0.28);
+  border-radius: 6px;
+}
+
+/* Primary button (violet brand) */
+.btn-primary,
+.btn.btn-primary {
+  --btn-bg: var(--green-700);
+  --btn-hover: var(--green-900);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 12px;
+  border: 1px solid var(--btn-bg);
+  background: var(--btn-bg);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.16s ease, border-color 0.16s ease,
+    box-shadow 0.16s ease, transform 0.16s ease;
+  box-shadow: 0 2px 6px rgba(66, 14, 107, 0.25);
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover {
+  background: var(--btn-hover);
+  border-color: var(--btn-hover);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(66, 14, 107, 0.32);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active,
+.btn.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(66, 14, 107, 0.25);
+}
+
+.btn-primary:focus-visible,
+.btn.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(66, 14, 107, 0.3);
+}
+
+/* Secondary / ghost button keeps the white look */
+.btn-secondary,
+.btn.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.btn-secondary:hover,
+.btn.btn-outline:hover {
+  border-color: var(--green-700);
+  color: var(--green-700);
+  background: var(--green-050);
+  box-shadow: 0 2px 8px rgba(66, 14, 107, 0.12);
+}
+
+/* WhatsApp button stays recognizable — only polish edges */
+.btn-whatsapp {
+  border-radius: 12px;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  font-weight: 600;
+  transition: box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+/* Form controls — radius consistency with the design system */
+.form-control,
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="number"],
+input[type="url"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.95rem;
+  padding: 0.65rem 0.9rem;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.form-control::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.form-control:hover,
+input:hover:not([type="checkbox"]):not([type="radio"]),
+select:hover,
+textarea:hover {
+  border-color: #cfc7bd;
+}
+
+.form-control:focus,
+input:focus:not([type="checkbox"]):not([type="radio"]),
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 3px rgba(66, 14, 107, 0.18);
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+  display: inline-block;
+}
+
+/* Small utility buttons stay compact */
+.btn-sm {
+  min-height: 2.25rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  border-radius: 10px;
+}
+
+/* Disabled state — still light */
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-secondary:disabled,
+.btn-secondary.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------
+   5. ABOUT STRIP — dark violet panel (keep dark, stack on mobile)
+   ------------------------------------------------------------ */
+.about-strip {
+  /* Do not lighten: the dark panel is intentional brand contrast. */
+  border-radius: 20px;
+}
+
+.about-strip .about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-strip .about-copy h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(1.4rem, 3vw + 0.8rem, 2rem);
+  line-height: 1.2;
+  margin-bottom: 0.9rem;
+  text-wrap: balance;
+}
+
+.about-strip .about-copy p {
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  max-width: 52ch;
+}
+
+.about-strip .about-points {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-strip .about-point {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.about-strip .about-point .tick {
+  flex: 0 0 auto;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(233, 161, 59, 0.16);
+  color: var(--amber);
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+}
+
+.about-strip .about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Stack cleanly on phones: copy first, visual/stat card below */
+@media (max-width: 768px) {
+  .about-strip .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-strip {
+    border-radius: 16px;
+  }
+
+  .about-strip .about-actions .btn-primary,
+  .about-strip .about-actions .btn-secondary,
+  .about-strip .about-actions .btn-whatsapp {
+    flex: 1 1 100%;
+  }
+}
+
+/* ------------------------------------------------------------
+   6. FOOTER — subtle link hover improvements
+   ------------------------------------------------------------ */
+.site-footer {
+  background: var(--green-950);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.16s ease, padding-left 0.16s ease;
+}
+
+.site-footer a:hover {
+  color: #fff;
+  padding-left: 2px; /* subtle nudge, not a jump */
+}
+
+.site-footer a:focus-visible {
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(233, 161, 59, 0.45);
+}
+
+.site-footer .footer-heading {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.site-footer .footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+}
+
+.site-footer .footer-brand p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: 34ch;
+}
+
+.site-footer .footer-bottom {
+  margin-top: 2.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.site-footer .footer-bottom a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.site-footer .footer-bottom a:hover {
+  color: var(--amber);
+  padding-left: 0;
+}
+
+/* ------------------------------------------------------------
+   7. MOBILE — hero crowding fixes
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .hero-sub {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-search {
+    margin-bottom: 1rem;
+  }
+
+  .hero-search .form-control,
+  .hero-search input[type="search"],
+  .hero-search input[type="text"] {
+    height: 3rem;
+    font-size: 16px; /* stops iOS auto-zoom on focus */
+    padding-left: 2.75rem;
+  }
+
+  .hero-meta {
+    gap: 0.6rem 1.1rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+  }
+
+  .hero-popular {
+    font-size: 0.82rem;
+  }
+
+  .hero-visual {
+    margin-top: 0.25rem;
+  }
+
+  /* featured strip stacks to one comfy column */
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .hero-popular a,
+  .hero-popular .chip {
+    min-height: 2.75rem; /* 44px tap target on phones */
+    font-size: 0.82rem;
+  }
+
+  .cat-count {
+    height: 1.5rem;
+    min-width: 1.8rem;
+    font-size: 0.72rem;
+  }
+}
+
+/* Reduced motion: keep polish, drop the lift */
+@media (prefers-reduced-motion: reduce) {
+  .hero-popular a,
+  .hero-popular .chip,
+  .feature-tile,
+  .btn-primary,
+  .btn.btn-primary,
+  .btn-secondary,
+  .btn.btn-outline,
+  .btn-whatsapp {
+    transition: none;
+  }
+
+  .hero-popular a:hover,
+  .hero-popular .chip:hover,
+  .feature-tile:hover,
+  .btn-primary:hover,
+  .btn.btn-primary:hover,
+  .btn-whatsapp:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   Phase 8 (2026-10-02) — UI polish: tool cards + feature tiles
+   ============================================================ */
+/* ============================================================
+   01-cards.css — Azlaan Tools Phase 8: card + feature-tile polish
+   White/light theme only. Works with existing design tokens:
+   --ink, --muted, --card, --line, --green-700 (violet brand),
+   --green-050, --amber, --radius.
+   Per-category icon tints (e.g. .category-title#pdf + .tool-grid .icon)
+   are defined elsewhere and must keep winning; this file only
+   deepens the shared tile, never the tint itself.
+   ============================================================ */
+
+/* ---------- Base card ---------- */
+.tool-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  height: 100%;
+  padding: 1.05rem 1rem 1.1rem;
+  position: relative; /* anchor for .use-badge */
+  transition: border-color .22s ease, box-shadow .28s ease, transform .22s ease;
+  will-change: transform;
+}
+
+.tool-card:hover,
+.tool-card:focus-within {
+  border-color: #a48cd4; /* violet-ish, not gaudy */
+  box-shadow: 0 12px 30px rgba(66, 14, 107, .10),
+              0 0 0 3px rgba(66, 14, 107, .06); /* soft violet glow ring */
+  transform: translateY(-4px);
+}
+
+.tool-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(66, 14, 107, .10);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tool-card { transition: none; }
+  .tool-card:hover,
+  .tool-card:focus-within { transform: none; }
+}
+
+/* ---------- Icon tile: 46px, rounded, inner ring ---------- */
+.tool-card .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--green-050);
+  color: var(--green-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* subtle inner ring + faint top highlight for depth */
+  box-shadow: inset 0 0 0 1px rgba(66, 14, 107, .10),
+              inset 0 1px 0 rgba(255, 255, 255, .55),
+              0 1px 2px rgba(42, 11, 61, .06);
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+
+.tool-card:hover .icon {
+  box-shadow: inset 0 0 0 1px rgba(66, 14, 107, .18),
+              inset 0 1px 0 rgba(255, 255, 255, .55),
+              0 3px 8px rgba(66, 14, 107, .12);
+  transform: scale(1.03);
+}
+
+.tool-card .icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Type rhythm: tighter title, clamped desc ---------- */
+.tool-card h3 {
+  font-size: .99rem;
+  font-weight: 650;
+  color: var(--ink);
+  margin-top: .8rem;
+  margin-bottom: .3rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.tool-card p {
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 0;
+  /* 2-line clamp so grid rows align neatly */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* ---------- Use-count badge: "N dafa istemal" ---------- */
+.tool-card .use-badge {
+  position: absolute;
+  top: .7rem;
+  right: .7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .25em;
+  font-size: .68rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--green-700);
+  background: var(--green-050);
+  border: 1px solid rgba(66, 14, 107, .12);
+  border-radius: 999px;
+  padding: .32em .6em;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   .feature-tile — homepage featured strip, same visual family
+   Structure: .feature-tile(.variant) > .icon, h3, p, .go
+   ============================================================ */
+.feature-tile {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  height: 100%;
+  padding: 1.1rem 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .22s ease, box-shadow .28s ease, transform .22s ease;
+}
+
+.feature-tile:hover,
+.feature-tile:focus-within {
+  border-color: #a48cd4;
+  box-shadow: 0 12px 30px rgba(66, 14, 107, .10),
+              0 0 0 3px rgba(66, 14, 107, .06);
+  transform: translateY(-4px);
+}
+
+.feature-tile .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--green-050);
+  color: var(--green-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(66, 14, 107, .10),
+              inset 0 1px 0 rgba(255, 255, 255, .55),
+              0 1px 2px rgba(42, 11, 61, .06);
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+
+.feature-tile:hover .icon { transform: scale(1.03); }
+
+.feature-tile .icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-tile h3 {
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--ink);
+  margin-top: .8rem;
+  margin-bottom: .3rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.feature-tile p {
+  font-size: .86rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.feature-tile .go {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  margin-top: .6rem;
+  font-size: .83rem;
+  font-weight: 650;
+  color: var(--green-700);
+  text-decoration: none;
+}
+
+.feature-tile .go:hover { text-decoration: underline; }
+
+/* Variant accent tiles (gov-schemes etc.) keep their flavor —
+   just add the same hover depth */
+.feature-tile.accent:hover,
+.feature-tile.schemes:hover {
+  box-shadow: 0 12px 30px rgba(66, 14, 107, .12),
+              0 0 0 3px rgba(66, 14, 107, .06);
+}
+
+/* ============================================================
+   Mobile-first: 2-per-row cards stay comfortable at col-6
+   ============================================================ */
+@media (max-width: 575.98px) {
+  .tool-card {
+    padding: .95rem .85rem 1rem;
+  }
+
+  /* Tap target: whole card is one link already; keep minimum
+     comfortable height without making rows huge */
+  .tool-card .icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .tool-card .icon svg { width: 22px; height: 22px; }
+
+  .tool-card h3 {
+    font-size: .93rem;
+    margin-top: .65rem;
+  }
+
+  .tool-card p {
+    font-size: .81rem;
+    line-height: 1.45;
+  }
+
+  .tool-card .use-badge {
+    top: .6rem;
+    right: .6rem;
+    font-size: .64rem;
+  }
+
+  .feature-tile { padding: 1rem .9rem; }
+  .feature-tile h3 { font-size: .95rem; }
+  .feature-tile p { font-size: .82rem; }
+}
+
+/* Slightly roomier grid gaps on small screens */
+@media (max-width: 575.98px) {
+  .tool-grid { row-gap: 1rem; }
+}
+
+/* ============================================================
+   Phase 8 (2026-10-02) — UI polish: tool page generic styles
+   ============================================================ */
+/* ==========================================================================
+   03-tool-pages.css — Azlaan Tools: beautification for all tool pages
+   --------------------------------------------------------------------------
+   Additive-only layer. Targets the generic tool-page structure
+   (<main class="container"> → .container.py-4 → .row → .col-12.col-lg-8 →
+   h1.mb-3, p.lead.text-muted, .card, form controls, results, buttons).
+
+   Design system:
+     --ink:#1e1725  --muted:#756d7f  --card:#fff  --line:#e6e0d2
+     --green-700:#420e6b (violet brand)  --green-050:#efedf5
+     --amber:#e9a13b  --radius:12px
+     Fraunces (display headings) · Inter (body)
+
+   Rules honored: no !important, no hidden elements, no dark backgrounds,
+   flat aesthetic, generic selectors safe for all 1109 pages.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PAGE TITLE TREATMENT
+   Scoped to the tool-page column so home/category pages are unaffected.
+   -------------------------------------------------------------------------- */
+
+/* Column wrapper selector shared across the tool pages */
+main > .container.py-4 > .row.justify-content-center > .col-12.col-lg-8 {
+  padding-top: 0.25rem;
+}
+
+/* Tool page H1: Fraunces display font, larger, violet left accent bar */
+main > .container.py-4 h1.mb-3 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: clamp(1.65rem, 1.3rem + 1.8vw, 2.25rem);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--ink, #1e1725);
+  margin-bottom: 0.5rem;
+  padding-left: 0.85rem;
+  border-left: 4px solid var(--green-700, #420e6b);
+}
+
+/* Subtitle/description directly under the title */
+main > .container.py-4 h1.mb-3 + p.lead.text-muted {
+  color: var(--muted, #756d7f);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Any other .lead.text-muted inside the tool column (some pages repeat it) */
+main > .container.py-4 > .row > .col-12.col-lg-8 > p.lead.text-muted {
+  color: var(--muted, #756d7f);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   2. CARDS — more elevation, 14px radius, softer border, comfy padding
+   -------------------------------------------------------------------------- */
+
+/* Tool page cards: elevation + radius + soft border */
+main > .container.py-4 .card {
+  border-radius: 14px;
+  border: 1px solid var(--line, #e6e0d2);
+  background-color: var(--card, #fff);
+  box-shadow: 0 6px 18px rgba(30, 23, 37, 0.07), 0 1.5px 4px rgba(30, 23, 37, 0.05);
+}
+
+/* Replace Bootstrap's shadow-sm on tool cards with our softer shadow */
+main > .container.py-4 .card.shadow-sm {
+  box-shadow: 0 6px 18px rgba(30, 23, 37, 0.07), 0 1.5px 4px rgba(30, 23, 37, 0.05);
+}
+
+main > .container.py-4 .card-body {
+  padding: 1.6rem;
+}
+
+/* Tighter padding on small screens so the form still breathes */
+@media (max-width: 575.98px) {
+  main > .container.py-4 .card-body {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Card section headings inside tool bodies */
+main > .container.py-4 .card-body h5,
+main > .container.py-4 .card-body h6 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  color: var(--ink, #1e1725);
+  margin-bottom: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. FORMS — refined labels, violet focus ring, range accent
+   -------------------------------------------------------------------------- */
+
+main > .container.py-4 .form-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink, #1e1725);
+  margin-bottom: 0.4rem;
+}
+
+/* Consistent control sizing + gentle radius */
+main > .container.py-4 .form-control,
+main > .container.py-4 .form-select {
+  border-radius: 10px;
+  border: 1px solid var(--line, #e6e0d2);
+  color: var(--ink, #1e1725);
+  padding: 0.65rem 0.9rem;
+  background-color: #fff;
+}
+
+/* Violet focus ring (brand color) */
+main > .container.py-4 .form-control:focus,
+main > .container.py-4 .form-select:focus {
+  border-color: var(--green-700, #420e6b);
+  box-shadow: 0 0 0 0.22rem rgba(66, 14, 107, 0.14);
+  outline: 0;
+}
+
+main > .container.py-4 .form-control::placeholder {
+  color: #a89eaf;
+  opacity: 1;
+}
+
+/* Range inputs: violet thumb + track accent */
+main > .container.py-4 input[type="range"].form-range {
+  accent-color: var(--green-700, #420e6b);
+}
+
+/* Checkboxes/radios: violet accent */
+main > .container.py-4 .form-check-input:checked {
+  background-color: var(--green-700, #420e6b);
+  border-color: var(--green-700, #420e6b);
+}
+
+main > .container.py-4 .form-check-input:focus {
+  border-color: var(--green-700, #420e6b);
+  box-shadow: 0 0 0 0.22rem rgba(66, 14, 107, 0.14);
+}
+
+/* Inline buttons beside inputs keep visual rhythm */
+main > .container.py-4 .input-group .btn {
+  border-radius: 0 10px 10px 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. RESULTS — "result" feel for success alerts, cleaner striped tables
+   -------------------------------------------------------------------------- */
+
+/* Result box: soft green-violet treatment with a left flourish */
+main > .container.py-4 .alert-success {
+  border-radius: 14px;
+  border: 1px solid #cfe8d3;
+  border-left: 5px solid #2e7d32;
+  background-color: #f4fbf5;
+  color: var(--ink, #1e1725);
+  padding: 1.1rem 1.25rem;
+}
+
+/* Info / danger alerts keep a matching radius + softness */
+main > .container.py-4 .alert-info {
+  border-radius: 14px;
+  border: 1px solid #d3d5e8;
+  border-left: 5px solid var(--green-700, #420e6b);
+  background-color: #f5f4fb;
+  color: var(--ink, #1e1725);
+  padding: 1.1rem 1.25rem;
+}
+
+main > .container.py-4 .alert-danger {
+  border-radius: 14px;
+  border: 1px solid #f3c9c9;
+  border-left: 5px solid #c62828;
+  background-color: #fdf3f3;
+  color: var(--ink, #1e1725);
+  padding: 1.1rem 1.25rem;
+}
+
+/* Big result numbers inside result alerts: display font + room */
+main > .container.py-4 .alert .fs-4.fw-bold,
+main > .container.py-4 .alert-success .fs-4,
+main > .container.py-4 .alert-info .fs-4 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Smaller result numbers */
+main > .container.py-4 .alert .fs-5.fw-bold {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.35rem;
+}
+
+/* Tables: cleaner striped look */
+main > .container.py-4 .table {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line, #e6e0d2);
+  color: var(--ink, #1e1725);
+  margin-bottom: 0;
+}
+
+main > .container.py-4 .table thead th {
+  background-color: var(--green-050, #efedf5);
+  color: var(--ink, #1e1725);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--line, #e6e0d2);
+  padding: 0.75rem 1rem;
+}
+
+main > .container.py-4 .table tbody td,
+main > .container.py-4 .table tbody th {
+  padding: 0.7rem 1rem;
+  border-color: #f0ebdf;
+  vertical-align: middle;
+}
+
+main > .container.py-4 .table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #faf8f3;
+}
+
+/* --------------------------------------------------------------------------
+   5. BUTTONS — flat violet primary with hover darkening; full-width actions
+   -------------------------------------------------------------------------- */
+
+/* Base polish for buttons inside tool pages */
+main > .container.py-4 .btn {
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.65rem 1.35rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.06s ease;
+}
+
+/* Primary = flat violet; full-width action buttons fill the card */
+main > .container.py-4 .btn-primary {
+  background-color: var(--green-700, #420e6b);
+  border-color: var(--green-700, #420e6b);
+  color: #fff;
+}
+
+main > .container.py-4 .btn-primary:hover,
+main > .container.py-4 .btn-primary:focus {
+  background-color: #36105c;
+  border-color: #36105c;
+  color: #fff;
+}
+
+main > .container.py-4 .btn-primary:active {
+  background-color: #2c0d4d;
+  border-color: #2c0d4d;
+  transform: translateY(1px);
+}
+
+main > .container.py-4 .btn-primary:focus-visible {
+  box-shadow: 0 0 0 0.22rem rgba(66, 14, 107, 0.28);
+  outline: 0;
+}
+
+/* Primary buttons that are full width (the main tool actions) */
+main > .container.py-4 .btn-primary.w-100 {
+  padding: 0.8rem 1.35rem;
+  font-size: 1.02rem;
+  border-radius: 12px;
+}
+
+/* Disabled state stays readable on white */
+main > .container.py-4 .btn-primary:disabled,
+main > .container.py-4 .btn-primary.disabled {
+  background-color: #b9a6c9;
+  border-color: #b9a6c9;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Outline-secondary: soft bordered, brand tint on hover */
+main > .container.py-4 .btn-outline-secondary {
+  border-radius: 10px;
+  border-color: var(--line, #e6e0d2);
+  color: var(--ink, #1e1725);
+}
+
+main > .container.py-4 .btn-outline-secondary:hover {
+  background-color: var(--green-050, #efedf5);
+  border-color: var(--green-700, #420e6b);
+  color: var(--green-700, #420e6b);
+}
+
+/* Copy/reset secondary buttons get a comfortable hit area */
+main > .container.py-4 .btn-sm {
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   Small extras for the tool column (spacing rhythm, muted text)
+   -------------------------------------------------------------------------- */
+
+/* Space between stacked cards */
+main > .container.py-4 .card + .card {
+  margin-top: 0.25rem;
+}
+
+/* Small helper text under controls */
+main > .container.py-4 .form-text {
+  color: var(--muted, #756d7f);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
+
+/* Result output elements / pre blocks inside result cards */
+main > .container.py-4 .card-body pre {
+  background-color: #faf8f3;
+  border: 1px solid var(--line, #e6e0d2);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  color: var(--ink, #1e1725);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Badge accents inside tool pages */
+main > .container.py-4 .badge.bg-primary {
+  background-color: var(--green-700, #420e6b);
+}
+
+main > .container.py-4 .badge.bg-warning {
+  background-color: var(--amber, #e9a13b);
+  color: var(--ink, #1e1725);
+}
+
+/* ==========================================================================
+   OPTIONAL — BREADCRUMB BAR (only if the coordinator injects `.tool-crumb`)
+   --------------------------------------------------------------------------
+   Not wired up: this is the style proposal. If the coordinator injects
+   <nav class="tool-crumb" aria-label="breadcrumb"><ol>…</ol></nav> above the
+   h1, these styles give it a slim, brand-tinted crumb bar.
+   ========================================================================== */
+
+main > .container.py-4 .tool-crumb {
+  margin: 0 0 0.9rem;
+  padding: 0;
+  font-size: 0.86rem;
+  color: var(--muted, #756d7f);
+}
+
+main > .container.py-4 .tool-crumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main > .container.py-4 .tool-crumb li + li::before {
+  content: "›";
+  color: #b7abbe;
+  margin-right: 0.35rem;
+}
+
+main > .container.py-4 .tool-crumb a {
+  color: var(--green-700, #420e6b);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+main > .container.py-4 .tool-crumb a:hover {
+  text-decoration: underline;
+}
+
+main > .container.py-4 .tool-crumb li[aria-current="page"] {
+  color: var(--ink, #1e1725);
+  font-weight: 600;
+}
+
+/* ====================================================================
+   RESPONSIVE FIX PACK v9 — appended 2026-10-03
+   10 additive override modules (mobile-first). Equal-specificity rules
+   win by source order. White theme, English content unchanged.
+   ==================================================================== */
+
+/* fix-01: hero padding + eyebrow */
+
+/* Base hero: keep the v7 vertical rhythm, restore horizontal padding
+   so content never touches the panel edges (the late v7 shorthand
+   set left/right padding to 0 on all viewports). */
+.hero {
+  padding-left: clamp(1.25rem, 4vw, 3.2rem);
+  padding-right: clamp(1.25rem, 4vw, 3.2rem);
+}
+
+/* Mobile hero: sensible inner padding that keeps the panel airy
+   on phones; re-applies (and slightly refines) the earlier <=767px
+   fix that the v7 shorthand had overridden. */
+@media (max-width: 767.98px) {
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: 1.9rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Eyebrow: stop the nowrap clipping on very narrow screens.
+   On desktop the pill keeps its single-line look; at <=480px the
+   label may wrap onto a second line instead of being cut off. */
+@media (max-width: 480px) {
+  .hero-eyebrow {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.5;
+  }
+}
+
+/* Top-tools section: it already gets Bootstrap mt-4 from the markup,
+   so drop the extra 2.9rem category-title margin that created a
+   double gap. Other category titles are unaffected. */
+#topToolsSection .category-title {
+  margin-top: 1.5rem;
+}
+
+/* fix-02: feature-grid columns */
+/* Reconciles competing column rules scattered through app.css:
+   base 4-col (line ~434), 2-col <=991px (line ~435), dead duplicate
+   1fr <=520px (lines ~436, ~864), 1fr <=575px (line ~855), and the late
+   1fr <=768px block (line ~1708) that left 576-768px as one long column.
+   These append last, so they win at equal specificity. */
+@media (min-width:1200px){
+  .feature-grid{grid-template-columns:repeat(5,1fr)}
+}
+@media (max-width:1199.98px) and (min-width:992px){
+  .feature-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:991.98px) and (min-width:576px){
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:575.98px){
+  .feature-grid{grid-template-columns:1fr}
+}
+
+/* fix-03: mobile nav */
+/* Mobile nav tap targets + sticky collapse safety net.
+   Based on public/css/app.css (lines 67-77: .site-header .nav-link, .btn-whatsapp)
+   and layouts/app.blade.php (lines ~95-110: hamburger + #mainNav collapse). */
+@media (max-width:991.98px){
+    .site-header .nav-link{
+        min-height:44px;
+        display:flex;
+        align-items:center;
+    }
+    .site-header .btn-whatsapp{
+        min-height:44px;
+        width:100%;
+        justify-content:center;
+    }
+    .site-header .navbar-collapse{
+        max-height:calc(100dvh - 60px);
+        overflow-y:auto;
+    }
+}
+
+/* fix-04: footer + topbar */
+
+/* footer-bottom is a single text node inside a flex container that used
+   justify-content:space-between — that pinned the copyright line LEFT on all
+   viewports, defeating the text-center class. Center it instead. */
+.site-footer .footer-bottom {
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+/* Footer link rows were ~31px pitch — below comfortable mobile tap targets.
+   Adding vertical padding brings each row to >= 44px pitch. */
+.site-footer .footer-links a {
+    display: inline-block;
+    padding: .35rem 0;
+}
+
+/* Same treatment for the topbar tel link (~28px) — mobile only so the
+   desktop topbar layout stays untouched. */
+@media (max-width: 991.98px) {
+    .topbar a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+}
+
+/* fix-05: table scrolling */
+/* Defects: audit-C-css 1-2, audit-D-tools 1.
+   91 tool blades render bare <table> with NO .table-responsive wrapper
+   (blades cannot be edited — 1109 files), so unwrapped tables clip on
+   mobile while root has overflow-x:clip (app.css:532).
+   183 blades already wrap tables in .table-responsive (app.css:865). */
+
+/* Safety net: unwraped tables that are direct children of a card body
+   scroll horizontally instead of clipping. */
+.card-body > table.table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Undo for tables already wrapped in .table-responsive (the 183 good ones):
+   equal specificity (0-2-1) with the rule above, placed AFTER it, so source
+   order wins and wrapped tables keep their native table layout — the wrapper
+   itself provides the scroll (app.css:865). Desktop rendering unchanged. */
+.table-responsive > table.table {
+  display: table;
+}
+
+/* JS-injected tables in result areas (verified: .result-box defined at
+   app.css:240, 987; used in tool blades). No .output-box exists in the
+   codebase, so only .result-box is targeted. */
+.result-box table.table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Neutralize the dead rule at app.css:2218
+   (overflow is a spec no-op on table boxes) — documents intent. */
+main > .container.py-4 .table {
+  overflow: visible;
+}
+
+/* Known full-width document tables that must scroll on narrow screens. */
+#invoicePreview table,
+#payslipDoc table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* fix-06: generated media */
+/* qr-code-generator: QRCode.js renders a canvas + img at the exact chosen
+   pixel size (up to 1024px) inside #qrOutput, which overflows a 360px
+   viewport. Scale the rendered output to fit while preserving aspect. */
+#qrOutput img,
+#qrOutput canvas,
+#qrOutput svg {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* fix-07: phone grids */
+/* ------------------------------------------------------------------
+   1) Homepage card grids go single-column under 576px. At 320-360px the
+      Bootstrap `col-6` wrappers squeeze cards into two ~160px columns;
+      full width is far more readable on a phone.
+      Category pages are deliberately EXCLUDED here (they keep 2 cols).
+   2) Category-page badge guard: `.tool-card .use-badge` is absolutely
+      positioned (app.css ~1867) and can collide with long tool names at
+      320-360px. Give the h3 text breathing room and keep the badge from
+      growing over the title.
+   No rules here touch >=576px layouts. No visible strings added.
+   ------------------------------------------------------------------ */
+
+@media (max-width: 575.98px) {
+  /* Single column: top-10 grid (JS-rendered), search results grid
+     (JS-rendered), and the server-rendered Popular section. */
+  #topToolsGrid > [class*="col-"],
+  #searchGrid > [class*="col-"],
+  #popularSection .tool-grid > [class*="col-"] {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* use-badge collision guard (applies wherever a .tool-card carries a
+     badge: top-10 grid, category grids at 2 columns, etc.). */
+  .tool-card h3 {
+    padding-right: 3.2rem;
+  }
+
+  .tool-card .use-badge {
+    max-width: 5.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* fix-08: tap targets + iOS zoom */
+@media (pointer:coarse) {
+  /* Bump small buttons to a safer touch height (40px not 44px: tight
+     rows like merge-pdf's up/down/remove buttons stay intact). */
+  .btn-sm {
+    min-height: 40px;
+  }
+
+  /* 16px font on compact inputs stops iOS Safari auto-zoom on focus;
+     padding stays compact since only font-size is overridden. */
+  .form-control-sm {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Invoice rows (JS-generated into #itemRows): qty col + remove button
+     column size to content instead of the fixed 2-col grid slice so the
+     qty input and the x button get breathing room at 360px. */
+  #itemRows .item-row > .col-2 {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+/* fix-09: breakpoint hygiene + polish */
+/* ------------------------------------------------------------------
+   Audit (audit-C-css.md sections 2-4):
+   - Breakpoint hygiene: app.css mixes 575 / 575.98 / 520 and 767 / 768 /
+     991 / 992 cutoffs, with a duplicated (max-width:520px) .feature-grid
+     rule (lines 436 + 864). The duplicate is byte-identical, so it is
+     harmless idempotency and belongs to the grid/cards area — left for
+     that worker; no consolidated override block is emitted here because
+     no phone-width rules for the components this file owns (.hv-row,
+     .featured-head .featured-link) exist in ANY max-width query, i.e.
+     there is no orphaned rule to consolidate.
+   - Desktop (min-width:576px and up) is untouched throughout.
+   ------------------------------------------------------------------ */
+
+/* Small polish 1: hero visual rates rows at very narrow widths.
+   .hv-row is display:flex with justify-content:space-between; the label
+   (span) can be squeezed to nothing by the nowrap value (b) at ~360px.
+   Let the label truncate with an ellipsis and keep the value intact. */
+@media (max-width: 480px) {
+  .hv-row span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hv-row b {
+    flex-shrink: 0;
+  }
+}
+
+/* Small polish 2: featured strip link keeps white-space:nowrap, which can
+   overflow its flex container around 769-900px (wraps below at <=768px via
+   the column stacking rule). Truncate gracefully instead of overflowing.
+   No visual change where it fits (ellipsis only triggers on overflow). */
+.featured-head .featured-link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}

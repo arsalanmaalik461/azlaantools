@@ -1,0 +1,19 @@
+{
+  "name": "Azlaan Tools - Free Online Tools for Pakistan",
+  "short_name": "Azlaan Tools",
+  "description": "730+ Free Online Tools for Pakistan: Electricity bills, gas bills, PTCL bill check, solar calculators, PDF tools, image compressor, finance calculators and daily utilities.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b3d2e",
+  "theme_color": "#0b3d2e",
+  "categories": ["utilities", "productivity", "finance", "tools"],
+  "icons": [
+    {
+      "src": "/images/og-image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
